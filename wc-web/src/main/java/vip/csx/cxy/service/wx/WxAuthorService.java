@@ -1,4 +1,4 @@
-package vip.csx.cxy.service;
+package vip.csx.cxy.service.wx;
 
 import cn.hutool.core.lang.UUID;
 import cn.hutool.core.util.StrUtil;
@@ -16,14 +16,14 @@ import vip.csx.cxy.message.dto.UserDto;
 import vip.csx.cxy.message.dto.WxUserInfo;
 import vip.csx.cxy.message.req.ReqWxAuth;
 import vip.csx.cxy.message.resp.RespUser;
+import vip.csx.cxy.service.UserService;
 import vip.csx.cxy.utils.JWTUtils;
 
 import java.util.Objects;
-import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 @Service
-public class AuthorService {
+public class WxAuthorService {
 
     @Autowired
     private StringRedisTemplate redisTemplate;

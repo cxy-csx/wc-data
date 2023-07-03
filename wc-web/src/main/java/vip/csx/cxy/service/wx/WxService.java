@@ -1,4 +1,4 @@
-package vip.csx.cxy.service;
+package vip.csx.cxy.service.wx;
 
 import cn.hutool.core.codec.Base64;
 import com.alibaba.fastjson.JSON;

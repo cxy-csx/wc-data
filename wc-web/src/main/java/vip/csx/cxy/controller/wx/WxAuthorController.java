@@ -1,4 +1,4 @@
-package vip.csx.cxy.controller;
+package vip.csx.cxy.controller.wx;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,17 +6,17 @@ import org.springframework.web.bind.annotation.*;
 import vip.csx.cxy.annotation.NoAuth;
 import vip.csx.cxy.common.R;
 import vip.csx.cxy.message.req.ReqWxAuth;
-import vip.csx.cxy.service.AuthorService;
+import vip.csx.cxy.service.wx.WxAuthorService;
 
 import java.util.HashMap;
 
 @RestController
 @RequestMapping("author")
 @Slf4j
-public class AuthorController {
+public class WxAuthorController {
 
     @Autowired
-    private AuthorService authorService;
+    private WxAuthorService authorService;
 
 
     @GetMapping("/getSessionId")
