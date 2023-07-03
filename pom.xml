@@ -13,7 +13,7 @@
 
     <!--子工程-->
     <modules>
-        <module>course-api</module>
+        <module>course-web</module>
     </modules>
 
     <!--声明为pom-->

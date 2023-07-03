@@ -26,30 +26,33 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        if (!(handler instanceof HandlerMethod)){
-            return Boolean.TRUE;
-        }
-        HandlerMethod handlerMethod = (HandlerMethod) handler;
-        if(handlerMethod.hasMethodAnnotation(NoAuth.class)){
-            return Boolean.TRUE;
-        }
 
-        String token = request.getHeader(StrConstant.WX_HERDER_IDENTIFICATION);
-        if (StringUtils.isBlank(token)){
-            return this.noLoginResponse(response);
-        }
-        token = token.replace(StrConstant.WX_TOKEN_HEADER, "");
-        boolean verify = JWTUtils.verify(token);
-        if (!verify){
-            return this.noLoginResponse(response);
-        }
-        String userJson = redisTemplate.opsForValue().get(StrConstant.WX_TOKEN_KEY + token);
-        if (StringUtils.isBlank(userJson)){
-            return noLoginResponse(response);
-        }
-        UserDto userDto = JSON.parseObject(userJson, UserDto.class);
-        UserThreadLocal.put(userDto);
         return Boolean.TRUE;
+
+//        if (!(handler instanceof HandlerMethod)){
+//            return Boolean.TRUE;
+//        }
+//        HandlerMethod handlerMethod = (HandlerMethod) handler;
+//        if(handlerMethod.hasMethodAnnotation(NoAuth.class)){
+//            return Boolean.TRUE;
+//        }
+//
+//        String token = request.getHeader(StrConstant.WX_HERDER_IDENTIFICATION);
+//        if (StringUtils.isBlank(token)){
+//            return this.noLoginResponse(response);
+//        }
+//        token = token.replace(StrConstant.WX_TOKEN_HEADER, "");
+//        boolean verify = JWTUtils.verify(token);
+//        if (!verify){
+//            return this.noLoginResponse(response);
+//        }
+//        String userJson = redisTemplate.opsForValue().get(StrConstant.WX_TOKEN_KEY + token);
+//        if (StringUtils.isBlank(userJson)){
+//            return noLoginResponse(response);
+//        }
+//        UserDto userDto = JSON.parseObject(userJson, UserDto.class);
+//        UserThreadLocal.put(userDto);
+//        return Boolean.TRUE;
     }
 
     private boolean noLoginResponse(HttpServletResponse response) throws IOException {

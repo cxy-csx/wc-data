@@ -4,9 +4,9 @@ spring:
       max-request-size: 100MB
       max-file-size: 100MB
   datasource:
-    url: jdbc:mysql://localhost:3306/course?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://122.152.234.161:3306/wechat?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
-    password: 123456
+    password: qwe12580@Go
     driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
     host: 122.152.234.161
