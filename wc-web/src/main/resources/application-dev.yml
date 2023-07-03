@@ -1,0 +1,47 @@
+spring:
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 100MB
+  datasource:
+    url: jdbc:mysql://122.152.234.161:3306/wechat?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: qwe12580@Go
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 122.152.234.161
+    database: 0
+    port: 6379
+    password: qwe12580@GoGoGo
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+    timeout: 20000ms
+  application:
+    name: course
+
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+  elasticsearch:
+    rest:
+      uris: 194.124.213.201:9200
+
+server:
+  port: 5000
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  global-config:
+    db-config:
+      table-prefix: t_
+
+wx-mini:
+  appid: 'wx8bc57223d40ff4ba'
+  secret: '5c676c46ff05313c35d3b6eac1fbbfe0'
+  url: "https://api.weixin.qq.com/sns/jscode2session?appid=wx8bc57223d40ff4ba&secret=5c676c46ff05313c35d3b6eac1fbbfe0&js_code={}&grant_type=authorization_code"
+
