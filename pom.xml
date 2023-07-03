@@ -5,15 +5,15 @@
 
     <!--坐标信息-->
     <groupId>vip.csx.cxy</groupId>
-    <artifactId>wx-course</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>wx-course</name>
+    <artifactId>wc-data</artifactId>
+    <version>0.0.1</version>
+    <name>wc-data</name>
 
-    <description>微信小程序课件父工程</description>
+    <description>维C数据聚合平台</description>
 
     <!--子工程-->
     <modules>
-        <module>course-web</module>
+        <module>wc-web</module>
     </modules>
 
     <!--声明为pom-->
